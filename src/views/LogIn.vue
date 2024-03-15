@@ -1,21 +1,27 @@
 <template>
     <div id="background1">
         <a>登录</a>
-        <div class="forgetPassword" id="background2">
-            <LogIn  class="hide"/>
-            <div class="hide">
-                <ul>
-                    <li>求职者注册</li>
-                    <li>公司注册</li>
-                </ul>
-                <UserSignIn class="hide"/>
-                <CompanySignIn class="hide"/>
-            </div>
-            <ForgetPassword/>
+        <div class="login" id="background2">
+            <Transition>
+                <LogIn  v-if="login"/>
+            </Transition>
+            <Transition>
+                <div v-if="signin">
+                    <ul>
+                        <li>求职者注册</li>
+                        <li>公司注册</li>
+                    </ul>
+                    <UserSignIn v-if="user"/>
+                    <CompanySignIn v-if="company"/>
+                </div>
+            </Transition>
+            <Transition>
+                <ForgetPassword v-if="forget"/>
+            </Transition>
             <ul id="mode">
-                <li>登录</li>
-                <li>注册</li>
-                <li>忘记密码</li>
+                <li class="buttons activeButton" id="loginButton" @click="jump('login','loginButton')">登录</li>
+                <li class="buttons" id="signinButton" @click="jump('signin','signinButton')">注册</li>
+                <li class="buttons" id="forgetButton" @click="jump('forget','forgetButton')">忘记密码</li>
             </ul>
         </div>
         <a>应聘</a>
@@ -35,6 +41,44 @@ export default{
     CompanySignIn,
     ForgetPassword,
   },
+  data(){
+    return{
+        login:true,
+        signin:false,
+        forget:false,
+        user:true,
+        company:false,
+    }
+  },
+  methods:{
+    //设置底部按钮的背景
+    setButton(className){
+        var buttons = document.getElementsByClassName("buttons");
+        for(var i=0;i<3;i++){
+            buttons[i].className="buttons";
+        }
+        var button=document.getElementById(className);
+        button.className="buttons activeButton";
+    },
+    //跳转登录，注册和忘记密码
+    jump(backgroundClass,buttonId){
+        var background = document.getElementById("background2");
+        background.className=backgroundClass;
+
+        this.login=false;
+        this.signin=false;
+        this.forget=false;
+        if(backgroundClass=="login"){
+            this.login=true;
+        }else if(backgroundClass=="signin"){
+            this.signin=true;
+        }else if(backgroundClass=="forget"){
+            this.forget=true;
+        }
+
+        this.setButton(buttonId);
+    }
+  }
 }
 </script>
 
@@ -67,10 +111,10 @@ export default{
 .login{
     height:350px;
 }
-.singin{
+.signin{
     height:550px;
 }
-.forgetPassword{
+.forget{
     height:430px;
 }
 ul{
@@ -94,5 +138,19 @@ li{
 a{
     font-size: 8em;
     color:white;
+}
+.activeButton{
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+}
+.v-enter-active{
+    transition: opacity 1s;
+}
+.v-enter-from{
+    opacity: 0;
+}
+.v-enter-to{
+    opacity: 100;
 }
 </style>

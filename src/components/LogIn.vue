@@ -1,15 +1,17 @@
 <template>
     <div id="loginPart">
         <img src="../assets/img/user.png" id="avatar">
-        <a>用户</a>
         <div>
-            <input type="text" v-model="userName">
-        </div>
-        <a>密码</a>
-        <div>
-            <input type="password" v-model="password">
-        </div>
-        <button>→</button>
+            <a>用户</a>
+            <div>
+                <input type="text" v-model="userName">
+            </div>
+            <a>密码</a>
+            <div>
+                <input type="password" v-model="password">
+            </div>
+            <button>→</button>
+            </div>
     </div>
 </template>
 
@@ -46,7 +48,7 @@ button:hover{
 }
 #avatar{
     width:60px;
-    margin-left:95px ;
+    margin-left:65px ;
     margin-top:30px;
 }
 </style>

@@ -5,10 +5,8 @@
             <span>XXX</span>
         </div>
         <ul>
-            <li>撰写简历</li>
-            <li>推荐公司</li>
-            <li>个人信息</li>
-            <li>选项</li>
+            <li>公司信息</li>
+            <li>收到简历</li>
             <li>登出</li>
         </ul>
     </div>

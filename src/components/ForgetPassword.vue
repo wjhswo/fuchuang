@@ -51,7 +51,7 @@ a{
     height:50px;
     border-radius: 50%;
     color:white;
-    transition: background 5s ease;
+    transition-duration: 0.1s;
 }
 #findBackButton:hover{
     background-color:rgb(25, 166, 25);

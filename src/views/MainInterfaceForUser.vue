@@ -3,6 +3,7 @@
         <UserMenuBar/>
         <GetCompany/>
         <UserResume/>
+        <PersonalInformation/>
     </div>
 </template>
 
@@ -10,11 +11,14 @@
 import UserMenuBar from "../components/UserMenuBar.vue"
 import GetCompany from "../components/GetCompany.vue"
 import UserResume from "../components/UserResume.vue"
+import PersonalInformation from "../components/PersonalInformation.vue"
+
 export default{
     components:{
         UserMenuBar,
         GetCompany,
         UserResume,
+        PersonalInformation,
     }
 }
 </script>

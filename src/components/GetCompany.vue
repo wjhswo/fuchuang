@@ -74,7 +74,15 @@ button{
     padding:10px;
     border-radius:10px;
 }
+button:hover{
+    background-color: gray;
+    color:white;
+}
 #getJob{
     background-color: rgb(218, 255, 188);
+}
+#getJob:hover{
+    background-color: green;
+    color:white;
 }
 </style>

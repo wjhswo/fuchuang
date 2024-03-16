@@ -48,6 +48,9 @@
                 <textarea></textarea>
             </div>
         </div>
+        <div id="buttonPart">
+            <button>提交</button>
+        </div>
     </div>
 </template>
 
@@ -81,5 +84,20 @@ input{
 }
 #rightBox{
     margin-left: 50px;
+}
+#buttonPart{
+    display: flex;
+    justify-content: center;
+}
+button{
+    border:none;
+    background-color: rgb(228, 252, 191);
+    padding: 5px;
+    border-radius: 5px;
+    width: 80px;
+}
+button:hover{
+    background-color: green;
+    color:white;
 }
 </style>

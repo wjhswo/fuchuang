@@ -5,8 +5,8 @@
             <span>XXX</span>
         </div>
         <ul>
-            <li>公司信息</li>
-            <li>收到简历</li>
+            <li @click="sendMenu(0)">公司信息</li>
+            <li @click="sendMenu(1)">收到简历</li>
             <li>登出</li>
         </ul>
     </div>
@@ -16,7 +16,16 @@
 export default{
     data(){
         return{
-            menu:[1,2,3]
+            menu:[true,false]
+        }
+    },
+    methods:{
+        sendMenu(num){
+            for(var i=0;i<2;i++){
+                this.menu[i]=false;
+            }
+            this.menu[num]=true;
+            this.$emit('getMenu',this.menu);
         }
     }
 }

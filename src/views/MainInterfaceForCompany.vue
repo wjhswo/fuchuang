@@ -1,8 +1,8 @@
 <template>
     <div id="main">
-        <CompanyMenuBar/>
-        <GetResume/>
-        <CompanyInformation/>
+        <CompanyMenuBar v-on:getMenu="getMenu"/>
+        <GetResume v-if="menu[1]"/>
+        <CompanyInformation v-if="menu[0]"/>
     </div>
 </template>
 
@@ -16,6 +16,16 @@ export default{
         CompanyMenuBar,
         GetResume,
         CompanyInformation,
+    },
+    data(){
+        return{
+            menu:[true,false],
+        }
+    },
+    methods:{
+        getMenu(menu){
+            this.menu=menu;
+        }
     }
 }
 </script>

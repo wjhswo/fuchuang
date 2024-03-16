@@ -5,10 +5,9 @@
             <span>XXX</span>
         </div>
         <ul>
-            <li>撰写简历</li>
-            <li>推荐公司</li>
-            <li>个人信息</li>
-            <li>选项</li>
+            <li @click="sendMenu(0)">撰写简历</li>
+            <li @click="sendMenu(1)">推荐公司</li>
+            <li @click="sendMenu(2)">个人信息</li>
             <li>登出</li>
         </ul>
     </div>
@@ -18,7 +17,16 @@
 export default{
     data(){
         return{
-            menu:[1,2,3]
+            menu:[true,false,false]
+        }
+    },
+    methods:{
+        sendMenu(num){
+            for(var i=0;i<3;i++){
+                this.menu[i]=false;
+            }
+            this.menu[num]=true;
+            this.$emit('getMenu',this.menu);
         }
     }
 }

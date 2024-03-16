@@ -42,6 +42,10 @@ button{
     border-radius:10px;
     background-color: rgb(233, 255, 248);
 }
+button:hover{
+    background-color: blue;
+    color:white;
+}
 #midInside{
     display: flex;
     align-items: center;

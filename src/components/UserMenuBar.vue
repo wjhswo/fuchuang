@@ -5,9 +5,9 @@
             <span>XXX</span>
         </div>
         <ul>
-            <li @click="sendMenu(0)">撰写简历</li>
-            <li @click="sendMenu(1)">推荐公司</li>
-            <li @click="sendMenu(2)">个人信息</li>
+            <li @click="sendMenu(0)" id="0" class="menu">撰写简历</li>
+            <li @click="sendMenu(1)" id="1" class="menu">推荐公司</li>
+            <li @click="sendMenu(2)" id="2" class="menu">个人信息</li>
             <li>登出</li>
         </ul>
     </div>
@@ -21,7 +21,17 @@ export default{
         }
     },
     methods:{
+        //切换背景
+        setActiveMenu(num){
+            var menu=document.getElementsByClassName("menu");
+            for(var i=0;i<3;i++){
+                menu[i].className="menu";
+            }
+            menu[num].classList.add("activeMenu");
+        },
+        //菜单切换
         sendMenu(num){
+            this.setActiveMenu(num);
             for(var i=0;i<3;i++){
                 this.menu[i]=false;
             }
@@ -50,10 +60,13 @@ li{
     font-size: 1.5em;
     color:black;
     height:15%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 40px;
     list-style: none;
+}
+li:hover{
+    background: linear-gradient(to right, #eda63c,rgb(255, 190, 104) );
 }
 img{
     width: 100px;
@@ -65,5 +78,8 @@ img{
     display: flex;
     align-items: center;
     margin-top: 50px;
+}
+.activeMenu{
+    background: linear-gradient(to right, #eda63c,rgb(255, 217, 167) );
 }
 </style>

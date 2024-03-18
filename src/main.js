@@ -7,4 +7,3 @@ const app = createApp(App)
 app.use(router)
 app.use(ArcoVue)
 app.mount('#app')
-

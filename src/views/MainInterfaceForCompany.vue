@@ -46,16 +46,6 @@ export default{
     }
 }
 
-// mounted () {
-//     axios
-//             .get('https://www.runoob.com/try/ajax/json_demo.json')
-//             .then(function (res) {
-//         console.log(res)
-//     })
-// }
-
-
-
 </script>
 
 <style scoped>

@@ -11,7 +11,7 @@ html{
 body{
   height:100%;
   margin:0px;
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(235, 235, 235);
 }
 #app{
   height:100%;

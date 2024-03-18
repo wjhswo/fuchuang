@@ -1,9 +1,5 @@
 <template>
     <div id="MenuBar">
-        <div id="namePart">
-            <img src="../assets/img/user2.png">
-            <span>XXX</span>
-        </div>
         <ul>
             <li @click="sendMenu(0)" id="0" class="menu">撰写简历</li>
             <li @click="sendMenu(1)" id="1" class="menu">推荐公司</li>
@@ -45,41 +41,30 @@ export default{
 <style scoped>
 #MenuBar{
     height: 100%;
-    width: 300px;
-    background-color: #eda63c;
-    border-radius: 0px 20px 20px 0px;
+    width: 250px;
+    background-color: white;
     position: fixed;
     top:0px;
     left:0px;
-    box-shadow: 0px 0px 20px rgb(126, 126, 126);
+    box-shadow: 0px 0px 1px rgb(126, 126, 126);
 }
 ul{
-    margin-top: 100px;
+    margin-top: 140px;
+    padding:0px;
 }
 li{
-    font-size: 1.5em;
     color:black;
     height:15%;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 40px;
+    padding-left: 30px;
     list-style: none;
 }
 li:hover{
-    background: linear-gradient(to right, #eda63c,rgb(255, 190, 104) );
-}
-img{
-    width: 100px;
-    height: 100px;
-    margin:30px;
-}
-#namePart{
-    font-size: 2em;
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
+    background: linear-gradient(to right, white,rgb(217, 217, 217) );
 }
 .activeMenu{
-    background: linear-gradient(to right, #eda63c,rgb(255, 217, 167) );
+    background: linear-gradient(to right, white,rgb(235, 235, 235) );
+    color:blue;
 }
 </style>

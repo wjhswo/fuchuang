@@ -1,5 +1,6 @@
 <template>
     <div id="main">
+        <HeadPart/>
         <CompanyMenuBar v-on:getMenu="getMenu"/>
         <GetResume v-if="menu[1]"/>
         <CompanyInformation v-if="menu[0]"/>
@@ -10,12 +11,14 @@
 import CompanyMenuBar from "../components/CompanyMenuBar.vue"
 import GetResume from "../components/GetResume.vue"
 import CompanyInformation from "../components/CompanyInformation.vue"
+import HeadPart from "../components/HeadPart.vue"
 
 export default{
     components:{
         CompanyMenuBar,
         GetResume,
         CompanyInformation,
+        HeadPart
     },
     data(){
         return{
@@ -32,6 +35,7 @@ export default{
 
 <style scoped>
 #main{
-    margin-left: 300px;
+    margin-left: 250px;
+    margin-top: 140px;
 }
 </style>

@@ -45,15 +45,14 @@ export default{
 #MenuBar{
     height: 100%;
     width: 300px;
-    background-color: #eda63c;
-    border-radius: 0px 20px 20px 0px;
+    background-color: white;
     position: fixed;
     top:0px;
     left:0px;
-    box-shadow: 0px 0px 20px rgb(126, 126, 126);
+    box-shadow: 0px 0px 2px rgb(126, 126, 126);
 }
 ul{
-    margin-top: 100px;
+    margin-top: 140px;
 }
 li{
     font-size: 1.5em;
@@ -78,7 +77,11 @@ img{
     align-items: center;
     margin-top: 50px;
 }
+li:hover{
+    background: linear-gradient(to right, white,rgb(217, 217, 217) );
+}
 .activeMenu{
-    background: linear-gradient(to right, #eda63c,rgb(255, 217, 167) );
+    background: linear-gradient(to right, white,rgb(235, 235, 235) );
+    color:blue;
 }
 </style>

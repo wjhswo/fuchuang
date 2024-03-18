@@ -1,5 +1,9 @@
 <template>
     <div id="resume">
+        <div class="inner">
+            <p id="title">撰写简历</p>
+            <hr>
+        </div>
         <div class="inner" id="firstBox">
             <div>
                 <div>
@@ -59,7 +63,7 @@
 
 <style scoped>
 #resume{
-    width:800px;
+    width:950px;
     margin-left: 150px;
     margin-top: 50px;
 }
@@ -71,7 +75,6 @@ textarea{
     margin-top: 30px;
 }
 .inner{
-    margin-left: 50px;
     margin-top: 50px;
     font-size: 1.2em;
     margin-right: 50px;
@@ -99,5 +102,8 @@ button{
 button:hover{
     background-color: green;
     color:white;
+}
+#title{
+    font-size: 1.8em;
 }
 </style>

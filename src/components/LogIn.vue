@@ -20,10 +20,11 @@
 
 <style scoped>
 #loginPart{
-    margin-left: 30px;
+    margin-left: 40px;
 }
 input{
-    width: 180px;
+    width: 270px;
+    height:25px;
     margin-bottom: 15px;
     margin-top: 5px;
 }
@@ -34,7 +35,7 @@ a{
 button{
     border: none;
     background-color: rgb(170, 235, 170);
-    margin-left: 70px;
+    margin-left: 110px;
     margin-top: 20px;
     width:50px;
     height:50px;
@@ -48,7 +49,7 @@ button:hover{
 }
 #avatar{
     width:60px;
-    margin-left:65px ;
+    margin-left:105px ;
     margin-top:30px;
 }
 </style>

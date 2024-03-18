@@ -7,9 +7,9 @@
             </Transition>
             <Transition>
                 <div v-if="signin">
-                    <ul>
-                        <li>求职者注册</li>
-                        <li>公司注册</li>
+                    <ul id="signinUl">
+                        <li @click="change('userButton')" class="whoSignin activeSigninButton" id="userButton">求职者注册</li>
+                        <li @click="change('companyButton')" class="whoSignin" id="companyButton">公司注册</li>
                     </ul>
                     <UserSignIn v-if="user"/>
                     <CompanySignIn v-if="company"/>
@@ -77,6 +77,26 @@ export default{
         }
 
         this.setButton(buttonId);
+    },
+    setSigninButton(className){
+        var buttons = document.getElementsByClassName("whoSignin");
+        for(var i=0;i<2;i++){
+            buttons[i].className="whoSignin";
+        }
+        var button=document.getElementById(className);
+        button.className="whoSignin activeSigninButton";
+    },
+    //注册的切换
+    change(buttonId){
+        this.user=false;
+        this.company=false;
+        if(buttonId=="userButton"){
+            this.user=true;
+        }else if(buttonId=="companyButton"){
+            this.company=true;
+        }
+
+        this.setSigninButton(buttonId);
     }
   }
 }
@@ -97,7 +117,7 @@ export default{
     z-index: 100;
 }
 #background2{
-    width:250px;
+    width:350px;
     background: linear-gradient(to bottom right, rgb(251, 224, 253),white, rgb(216, 241, 255));
     border-radius:30px;
     box-shadow: 0px 0px 20px rgb(126, 126, 126);
@@ -112,10 +132,10 @@ export default{
     height:350px;
 }
 .signin{
-    height:550px;
+    height:600px;
 }
 .forget{
-    height:430px;
+    height:500px;
 }
 ul{
     display: flex;
@@ -134,6 +154,7 @@ li{
     margin: 2px;
     color:rgb(158, 158, 230);
     font-weight:800;
+    margin-left: 10px;
 }
 a{
     font-size: 8em;
@@ -152,5 +173,11 @@ a{
 }
 .v-enter-to{
     opacity: 100;
+}
+#signinUl{
+    margin-left: 50px;
+}
+.activeSigninButton{
+    color:blue;
 }
 </style>

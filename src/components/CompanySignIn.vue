@@ -29,12 +29,12 @@
 
 <style scoped>
 #companySingInPart{
-    margin-left: 30px;
+    margin-left: 40px;
     margin-top: 40px;
 }
 input{
-    width: 180px;
-    margin-bottom: 5px;
+    width: 270px;
+    margin-bottom: 15px;
     margin-top: 5px;
 }
 a{
@@ -44,7 +44,7 @@ a{
 button{
     border: none;
     background-color: rgb(170, 235, 170);
-    margin-left: 70px;
+    margin-left: 110px;
     margin-top: 20px;
     width:50px;
     height:50px;

@@ -1,59 +1,72 @@
 <template>
     <div id="resume">
-        <div class="inner">
+        <div>
             <p id="title">撰写简历</p>
             <hr>
         </div>
-        <div class="inner" id="firstBox">
-            <div>
+        <div>
+            <p id="h2">个人信息</p>
+            <div class="inner" id="firstBox">
                 <div>
-                    <a>姓名：</a>
-                    <input type="text">
+                    <div class="inputPart">
+                        <a>姓名：</a>
+                        <input type="text">
+                    </div>
+                    <div class="inputPart">
+                        <a>性别：</a>
+                        <input type="text">
+                    </div>
                 </div>
-                <div>
-                    <a>性别：</a>
-                    <input type="text">
+                <div id="rightBox">
+                    <div class="inputPart">
+                        <a>住址：</a>
+                        <input type="text">
+                    </div>
+                    <div class="inputPart">
+                        <a>年龄：</a>
+                        <input type="text">
+                    </div>
                 </div>
-                <div>
-                    <a>年龄：</a>
-                    <input type="text">
+                <div id="rightBox">
+                    <div class="inputPart">
+                        <a>电话：</a>
+                        <input type="text">
+                    </div>
+                    <div class="inputPart">
+                        <a>学历：</a>
+                        <select>
+                            <option>本科</option>
+                            <option>专科</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div id="rightBox">
+            <p id="h2">职业预期</p>
+            <div class="inner inputPart">
+                <a>期望薪资/月：</a>
+                <input type="number">
+            </div>
+            <div class="inner inputPart">
+                <a>期望职业：</a>
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                </select>
+            </div>
+            <p id="h2">自我评价</p>
+            <div class="inner">
+                <a>个人长处</a>
                 <div>
-                    <a>住址：</a>
-                    <input type="text">
+                    <textarea></textarea>
                 </div>
+                <a>项目经验</a>
                 <div>
-                    <a>联系方式：</a>
-                    <input type="text">
-                </div>
-                <div>
-                    <a>学历：</a>
-                    <input type="radio" name="education"><span>本科</span>
-                    <input type="radio" name="education"><span>专科</span>
+                    <textarea></textarea>
                 </div>
             </div>
-        </div>
-        <div class="inner">
-            <a>期望薪资/月</a>
-            <input type="number">
-        </div>
-        <div class="inner">
-            <a>期望职业</a>
-            <input type="radio" class="choice" name="job"/><span>1</span>
-            <input type="radio" class="choice" name="job"><span>2</span>
-            <input type="radio" class="choice" name="job"/><span>1</span>
-            <input type="radio" class="choice" name="job"><span>2</span>
-        </div>
-        <div class="inner">
-            <a>自我介绍</a>
-            <div>
-                <textarea></textarea>
+            <div id="buttonPart">
+                <button>提交</button>
             </div>
-        </div>
-        <div id="buttonPart">
-            <button>提交</button>
         </div>
     </div>
 </template>
@@ -73,14 +86,51 @@ textarea{
     margin-bottom: 50px;
     border: none;
     margin-top: 30px;
+    background-color: rgb(241, 241, 241);
+}
+textarea:hover{
+    background-color: rgb(222, 222, 222);
+}
+textarea:focus{
+    box-shadow: 0px 0px 2px rgb(0, 34, 255);
+    background-color: white;
+    outline: none;
 }
 .inner{
-    margin-top: 50px;
-    font-size: 1.2em;
-    margin-right: 50px;
+    margin-left: 50px;
 }
 input{
-    border: none;
+    border-width: 0px;
+    border-radius: 2px;
+    background-color: rgb(241, 241, 241);
+    height:25px;
+    width: 160px;
+}
+select{
+    width: 160px;
+    border-width: 0px;
+    border-radius: 2px;
+    background-color: rgb(241, 241, 241);
+    height:25px;
+}
+select:focus{
+    box-shadow: 0px 0px 2px rgb(0, 34, 255);
+    background-color: white;
+}
+select:hover{
+    background-color: rgb(222, 222, 222);
+}
+input:focus{
+    outline: none;
+    box-shadow: 0px 0px 2px rgb(0, 34, 255);
+    background-color: white;
+}
+input:hover{
+    background-color: rgb(222, 222, 222);
+}
+#h2{
+    width: 100%;
+    font-size: 1.3em;
 }
 #firstBox{
     display: flex;
@@ -105,5 +155,11 @@ button:hover{
 }
 #title{
     font-size: 1.8em;
+}
+.inputPart{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    display: flex;
 }
 </style>

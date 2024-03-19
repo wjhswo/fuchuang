@@ -27,6 +27,8 @@ export default{
         },
         //菜单切换
         sendMenu(num){
+            document.documentElement.scrollTop = 0;
+            
             this.setActiveMenu(num);
             for(var i=0;i<3;i++){
                 this.menu[i]=false;

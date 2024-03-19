@@ -50,6 +50,5 @@ button:hover{
 #avatar{
     width:60px;
     margin-left:105px ;
-    margin-top:30px;
 }
 </style>

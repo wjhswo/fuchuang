@@ -1,30 +1,35 @@
 <template>
-    <div id="background1">
-        <a>登录</a>
-        <div class="login" id="background2">
-            <Transition>
-                <LogIn  v-if="login"/>
-            </Transition>
-            <Transition>
-                <div v-if="signin">
-                    <ul id="signinUl">
-                        <li @click="change('userButton')" class="whoSignin activeSigninButton" id="userButton">求职者注册</li>
-                        <li @click="change('companyButton')" class="whoSignin" id="companyButton">公司注册</li>
-                    </ul>
-                    <UserSignIn v-if="user"/>
-                    <CompanySignIn v-if="company"/>
+    <div id="background1">  
+        <div id="background2">
+            <div id="leftPicture">
+                <div id="leftText">
+                    <p>{{ mode }}</p>
                 </div>
-            </Transition>
-            <Transition>
-                <ForgetPassword v-if="forget"/>
-            </Transition>
-            <ul id="mode">
-                <li class="buttons activeButton" id="loginButton" @click="jump('login','loginButton')">登录</li>
-                <li class="buttons" id="signinButton" @click="jump('signin','signinButton')">注册</li>
-                <li class="buttons" id="forgetButton" @click="jump('forget','forgetButton')">忘记密码</li>
-            </ul>
+                <ul id="mode">
+                    <li class="buttons activeButton" id="loginButton" @click="jump('login','loginButton')">登录</li>
+                    <li class="buttons" id="signinButton" @click="jump('signin','signinButton')">注册</li>
+                    <li class="buttons" id="forgetButton" @click="jump('forget','forgetButton')">忘记密码</li>
+                </ul>
+            </div>
+            <div id="background3">
+                <Transition>
+                    <LogIn  v-if="login"/>
+                </Transition>
+                <Transition>
+                    <div v-if="signin">
+                        <ul id="signinUl">
+                            <li @click="change('userButton')" class="whoSignin activeSigninButton" id="userButton">求职者注册</li>
+                            <li @click="change('companyButton')" class="whoSignin" id="companyButton">公司注册</li>
+                        </ul>
+                        <UserSignIn v-if="user"/>
+                        <CompanySignIn v-if="company"/>
+                    </div>
+                </Transition>
+                <Transition>
+                    <ForgetPassword v-if="forget"/>
+                </Transition>
+            </div>
         </div>
-        <a>应聘</a>
     </div>
 </template>
 
@@ -48,6 +53,7 @@ export default{
         forget:false,
         user:true,
         company:false,
+        mode:"登录",
     }
   },
   methods:{
@@ -62,9 +68,6 @@ export default{
     },
     //跳转登录，注册和忘记密码
     jump(backgroundClass,buttonId){
-        var background = document.getElementById("background2");
-        background.className=backgroundClass;
-
         this.login=false;
         this.signin=false;
         this.forget=false;
@@ -107,63 +110,81 @@ export default{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgb(27, 27, 142);
     height:100%;
-    background: linear-gradient(
-      217deg,
-      rgba(255, 166, 166, 0.8),
-      rgba(255, 0, 0, 0) 70.71%
-    ), linear-gradient(127deg, rgba(135, 248, 135, 0.8), rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(336deg, rgba(99, 182, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
     z-index: 100;
 }
 #background2{
-    width:350px;
-    background: linear-gradient(to bottom right, rgb(251, 224, 253),white, rgb(216, 241, 255));
-    border-radius:30px;
-    box-shadow: 0px 0px 20px rgb(126, 126, 126);
-    position: relative;
-    transition-duration: 0.5s;
-    margin:120px;
-}
-.hide{
-    display: none;
-}
-.login{
-    height:350px;
-}
-.signin{
+    width:700px;
     height:600px;
+    display: flex;
+    overflow:hidden;
+    border-radius: 20px;
 }
-.forget{
-    height:500px;
+#leftPicture{
+    width: 350px;
+    height:600px;
+    position: relative;
+    display:flex;
+    justify-content: center;
+    background: 
+        linear-gradient(217deg,rgb(116, 207, 243),rgba(255, 255, 255, 0) 70.71%), 
+        linear-gradient(127deg, rgb(207, 201, 255), rgba(255, 255, 255, 0) 70.71%),
+        linear-gradient(336deg, rgb(109, 109, 255), rgba(0, 0, 255, 0) 70.71%);
+}
+#background3{
+    width:350px;
+    background-color: white;
+    transition-duration: 0.5s;
+    right:0px;
+    display: flex;
+    align-items: center;
+}
+#leftText{
+    margin-top: 200px;
+    font-size: 2.5em;
+    width:100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+}
+p{
+    color:white;
+    text-align: center;
 }
 ul{
     display: flex;
     list-style-type: none;
     margin:0px;
     margin-bottom: 10px;
-    margin-top: 30px;
+    width: 100%;
 }
 #mode{
     position: absolute;
     bottom:10px;
-    right:10px;
+    left:10px;
     font-size: 0.25em;
+    color:white;
 }
 li{
     margin: 2px;
-    color:rgb(158, 158, 230);
     font-weight:800;
     margin-left: 10px;
+    border-radius: 5px;
 }
 a{
     font-size: 8em;
     color:white;
 }
 .activeButton{
-    background-color: green;
-    color: white;
+    background-color: rgb(205, 248, 255);
     border-radius: 5px;
+    color:black;
 }
 .v-enter-active{
     transition: opacity 1s;
@@ -178,6 +199,6 @@ a{
     margin-left: 50px;
 }
 .activeSigninButton{
-    color:blue;
+    background-color: rgb(206, 206, 206);
 }
 </style>

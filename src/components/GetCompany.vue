@@ -1,24 +1,23 @@
 <template>
     <div id="getCompany">
-        <div class="inner">
+        <div>
             <p id="title">推荐公司</p>
             <hr>
         </div>
+        <p id="h2">公司介绍</p>
         <div class="inner">
-            <a>No.1</a>
             <a>公司名称：xxx</a>
             <a>薪资：5000/月</a>
         </div>
         <div class="inner">
-            <a>公司介绍：</a>
             <p>blablabla</p>
         </div>
+        <p id="h2">岗位介绍：</p>
         <div class="inner">
-            <a>岗位介绍：</a>
             <p>blablabla</p>
         </div>
+        <p id="h2">提升建议：</p>
         <div class="inner">
-            <a>提升建议：</a>
             <p>blablabla</p>
         </div>
         <div class="inner" id="buttonBox">
@@ -47,13 +46,7 @@ a{
     padding:0px;
 }
 .inner{
-    margin-top: 50px;
-    font-size: 1.2em;
-    margin-right: 50px;
-}
-p{
-    margin:0px;
-    height:70px;
+    margin-left: 50px;
 }
 button{
     border: none;
@@ -73,5 +66,9 @@ button:hover{
 }
 #title{
     font-size: 1.8em;
+}
+#h2{
+    width: 100%;
+    font-size: 1.3em;
 }
 </style>

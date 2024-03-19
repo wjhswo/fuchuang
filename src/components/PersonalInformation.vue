@@ -1,5 +1,9 @@
 <template>
     <div id="personalInformation">
+        <div>
+            <p id="title">撰写简历</p>
+            <hr>
+        </div>
         <ul>
             <li>昵称</li>
             <li>姓名</li>
@@ -19,19 +23,16 @@
 
 <style scoped>
 #personalInformation{
-    width:800px;
+    width:950px;
     margin-left: 150px;
-    margin-top: 30px;
-    border-radius:30px;
-    background-color: rgb(233, 233, 233);
-    padding: 30px;
+    margin-top: 50px;
 }
 ul{
     list-style: none;
-    margin-left: 50px;
     margin-top: 50px;
     font-size: 1.2em;
     margin-right: 50px;
+    padding: 0px;
 }
 li{
     margin-top: 20px;
@@ -50,5 +51,8 @@ button:hover{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#title{
+    font-size: 1.8em;
 }
 </style>

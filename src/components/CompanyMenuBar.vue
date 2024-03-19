@@ -1,9 +1,5 @@
 <template>
     <div id="MenuBar">
-        <div id="namePart">
-            <img src="../assets/img/user2.png">
-            <span>XXX</span>
-        </div>
         <ul>
             <li @click="sendMenu(0)" class="menu">公司信息</li>
             <li @click="sendMenu(1)" class="menu">收到简历</li>
@@ -44,38 +40,24 @@ export default{
 <style scoped>
 #MenuBar{
     height: 100%;
-    width: 300px;
+    width: 250px;
     background-color: white;
     position: fixed;
     top:0px;
     left:0px;
-    box-shadow: 0px 0px 2px rgb(126, 126, 126);
+    box-shadow: 0px 0px 1px rgb(126, 126, 126);
 }
 ul{
     margin-top: 140px;
+    padding:0px;
 }
 li{
-    font-size: 1.5em;
     color:black;
     height:15%;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 40px;
+    padding-left: 30px;
     list-style: none;
-}
-li:hover{
-    background: linear-gradient(to right, #eda63c,rgb(255, 190, 104) );
-}
-img{
-    width: 100px;
-    height: 100px;
-    margin:30px;
-}
-#namePart{
-    font-size: 2em;
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
 }
 li:hover{
     background: linear-gradient(to right, white,rgb(217, 217, 217) );

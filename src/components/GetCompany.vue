@@ -1,26 +1,26 @@
 <template>
     <div id="getCompany">
-        <div>
-            <p id="title">推荐公司</p>
-            <hr>
+        <div class="window">
+            <p id="h2">公司介绍</p>
+            <div class="inner">
+                <p>公司名称：xxx</p>
+                <p>薪资：5000/月</p>
+                <p>blablabla</p>
+            </div>
         </div>
-        <p id="h2">公司介绍</p>
-        <div class="inner">
-            <a>公司名称：xxx</a>
-            <a>薪资：5000/月</a>
+        <div class="window">
+            <p id="h2">岗位介绍：</p>
+            <div class="inner">
+                <p>blablabla</p>
+            </div>
         </div>
-        <div class="inner">
-            <p>blablabla</p>
+        <div class="window">
+            <p id="h2">提升建议：</p>
+            <div class="inner">
+                <p>blablabla</p>
+            </div>
         </div>
-        <p id="h2">岗位介绍：</p>
-        <div class="inner">
-            <p>blablabla</p>
-        </div>
-        <p id="h2">提升建议：</p>
-        <div class="inner">
-            <p>blablabla</p>
-        </div>
-        <div class="inner" id="buttonBox">
+        <div id="buttonBox">
             <button>上一个</button>
             <button id="getJob">投递简历</button>
             <button>下一个</button>
@@ -32,6 +32,13 @@
 </script>
 
 <style scoped>
+.window{
+    background: linear-gradient(to right, rgb(243, 255, 254),rgb(255, 255, 255) );
+    box-shadow: 0px 0px 10px rgb(188, 188, 188);
+    border-radius: 10px;
+    padding:30px;
+    margin-bottom: 30px;
+}
 #getCompany{
     width:950px;
     margin-left: 150px;
@@ -70,5 +77,6 @@ button:hover{
 #h2{
     width: 100%;
     font-size: 1.3em;
+    margin-top: 0px;
 }
 </style>

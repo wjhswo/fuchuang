@@ -82,7 +82,7 @@
 }
 textarea{
     height: 400px;
-    width: 700px;
+    width: 800px;
     margin-bottom: 50px;
     border: none;
     margin-top: 30px;

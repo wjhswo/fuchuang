@@ -1,7 +1,7 @@
 <template>
     <div id="personalInformation">
         <div>
-            <p id="title">撰写简历</p>
+            <p id="title">个人信息</p>
             <hr>
         </div>
         <ul>
@@ -13,12 +13,34 @@
             <li>邮箱</li>
         </ul>
         <div id="midInside">
-            <button>修改信息</button>
+            <button @click="changeInformation()">修改信息</button>
         </div>
+        <ChangePersonalInformation v-if="change" v-on:get="get"/>
     </div>
 </template>
 
 <script>
+import ChangePersonalInformation from "./ChangePersonalInformation.vue"
+
+export default{
+    components:{
+        ChangePersonalInformation,
+    },
+    data(){
+        return{
+            change:false,
+        }
+    },
+    //修改信息窗口
+    methods:{
+        changeInformation(){
+            this.change=true;
+        },
+        get(change){
+            this.change=change;
+        }
+    }
+}
 </script>
 
 <style scoped>

@@ -30,7 +30,7 @@
 
 <style scoped>
 table{
-    width:800px;
+    width:900px;
     margin-left: 150px;
     margin-top: 30px;
 }
@@ -44,6 +44,6 @@ th{
     border-color: rgb(198, 198, 198);
     border-style: solid;
     border-width: 0.4px;
-    background-color: rgb(253, 255, 218);
+    background-color: rgb(234, 253, 255);
 }
 </style>
